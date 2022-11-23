@@ -8,12 +8,12 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
-  getFilms(){
-    return this.http.get('https://swapi.dev/api/films');
+  getCharacters(){
+    return this.http.get('https://swapi.dev/api/characters');
   }
 
-  getFilm(id){
-    return this.http.get(`https://swapi.dev/api/films/${id}`);
+  getCharacter(id){
+    return this.http.get(`https://swapi.dev/api/characters/${id}`);
   }
 
 }
