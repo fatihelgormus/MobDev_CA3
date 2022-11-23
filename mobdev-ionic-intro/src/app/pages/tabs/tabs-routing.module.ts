@@ -26,7 +26,7 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            loadChildren: () => import('../death-count/death.module').then( m => m.Dath-countPageModule)
+            loadChildren: () => import('../death-count/death-count.module').then( m => m.DeathCountPageModule)
           }
         ]
       },
@@ -52,7 +52,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: '/tabs/films',
+    redirectTo: '/tabs/characters',
     pathMatch: 'full'
   }
 ];
