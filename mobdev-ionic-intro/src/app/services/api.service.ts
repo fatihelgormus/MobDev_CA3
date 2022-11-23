@@ -1,9 +1,20 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
+ 
+  getFilms(){
+    return this.http.get('https://swapi.dev/api/characters');
+  }
+
+  getCharacter(id){
+    return this.http.get(`https://swapi.dev/api/characters/${id}`);
+  }
+
 }
+
