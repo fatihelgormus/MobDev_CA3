@@ -8,7 +8,7 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
  
-  getFilms(){
+  getcharacters(){
     return this.http.get('https://swapi.dev/api/characters');
   }
 
