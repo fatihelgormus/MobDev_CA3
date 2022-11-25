@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 export class ApiService {
 
   constructor(private http: HttpClient) { }
-
+ 
   getCharacters(){
     return this.http.get('https://swapi.dev/api/characters');
   }
@@ -17,3 +17,4 @@ export class ApiService {
   }
 
 }
+

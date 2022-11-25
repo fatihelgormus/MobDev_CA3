@@ -1,41 +1,46 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
 import { TabsPage } from './tabs.page';
 
+	
 const routes: Routes = [
   {
     path: 'tabs',
     component: TabsPage,
     children: [
       {
-        path: 'films',
+        path: 'characters',
         children: [
           {
             path: '',
-            loadChildren: () => import('../films/films.module').then( m => m.FilmsPageModule)
+            loadChildren: () => import('../characters/characters.module').then( m => m.CharactersPageModule)
           },
+        ]
+      },
+      {
+        path: 'death-count',
+        children: [
           {
-            path: ':id',
-            loadChildren: () => import('../film-details/film-details.module').then( m => m.FilmDetailsPageModule)
+            path: '',
+            loadChildren: () => import('../death-count/death-count.module').then( m => m.DeathCountPageModule)
           }
         ]
       },
       {
-        path: 'people',
+        path: 'episodes',
         children: [
           {
             path: '',
-            loadChildren: () => import('../people/people.module').then( m => m.PeoplePageModule)
+            loadChildren: () => import('../episodes/episodes.module').then( m => m.EpisodesPageModule)
           }
         ]
       },
       {
-        path: 'planets',
+        path: 'quotes',
         children: [
           {
             path: '',
-            loadChildren: () => import('../planets/planets.module').then( m => m.PlanetsPageModule)
+            loadChildren: () => import('../quotes/quotes.module').then( m => m.QuotesPageModule)
           }
         ]
       }
@@ -43,7 +48,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: '/tabs/films',
+    redirectTo: '/tabs/characters',
     pathMatch: 'full'
   }
 ];
